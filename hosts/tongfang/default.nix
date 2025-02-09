@@ -11,7 +11,7 @@
     ./hardware-configuration.nix
 
     ../common/global
-    ../common/users/gabriel
+    ../common/users/eelco
 
     ../common/optional/peripherals.nix
     ../common/optional/greetd.nix
@@ -23,7 +23,7 @@
   ];
 
   networking = {
-    hostName = "pleione";
+    hostName = "tongfang";
   };
 
   boot = {

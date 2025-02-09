@@ -187,7 +187,7 @@
         };
       };
       # Personal laptop
-      "eelco@pleione" = lib.homeManagerConfiguration {
+      "eelco@tonfang" = lib.homeManagerConfiguration {
         modules = [./home/eelco/tongfang.nix ./home/eelco/nixpkgs.nix];
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = {
