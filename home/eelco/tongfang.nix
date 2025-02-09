@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./global
+    ./features/desktop/gnome
     ./features/desktop/hyprland
     ./features/desktop/wireless
     ./features/productivity

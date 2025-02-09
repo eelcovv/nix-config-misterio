@@ -27,9 +27,10 @@ in {
       "wheel"
       "wireshark"
     ];
-
-    openssh.authorizedKeys.keys = lib.splitString "\n" (builtins.readFile ../../../../home/eelco/ssh.pub);
-    hashedPasswordFile = config.sops.secrets.eelco-password.path;
+    hashedPassword = "$y$j9T$XaNnfYFXEi2ToJvFdtQl90$HHAYVvopFFCHR.zJA7Ips4GAl7b6FdNTkGul3lUFwO8";
+    # 
+    #openssh.authorizedKeys.keys = lib.splitString "\n" (builtins.readFile ../../../../home/eelco/ssh.pub);
+    #hashedPasswordFile = config.sops.secrets.eelco-password.path;
     packages = [pkgs.home-manager];
   };
 

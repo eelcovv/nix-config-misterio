@@ -42,20 +42,20 @@
       FLAKE = "$HOME/Documents/NixConfig";
     };
 
-    persistence = {
-      "/persist/${config.home.homeDirectory}" = {
-        defaultDirectoryMethod = "symlink";
-        directories = [
-          "Documents"
-          "Downloads"
-          "Pictures"
-          "Videos"
-          ".local/bin"
-          ".local/share/nix" # trusted settings and repl history
-        ];
-        allowOther = true;
-      };
-    };
+    # persistence = {
+    #   "/persist/${config.home.homeDirectory}" = {
+    #     defaultDirectoryMethod = "symlink";
+    #     directories = [
+    #       "Documents"
+    #       "Downloads"
+    #       "Pictures"
+    #       "Videos"
+    #       ".local/bin"
+    #       ".local/share/nix" # trusted settings and repl history
+    #     ];
+    #     allowOther = true;
+    #   };
+    # };
   };
 
   colorscheme.mode = lib.mkOverride 1499 "dark";
