@@ -33,10 +33,10 @@ in {
     packages = [pkgs.home-manager];
   };
 
-  sops.secrets.eelco-password = {
-    sopsFile = ../../secrets.yaml;
-    neededForUsers = true;
-  };
+  #sops.secrets.eelco-password = {
+  #  sopsFile = ../../secrets.yaml;
+  #  neededForUsers = true;
+  #};
 
   home-manager.users.eelco = import ../../../../home/eelco/${config.networking.hostName}.nix;
 

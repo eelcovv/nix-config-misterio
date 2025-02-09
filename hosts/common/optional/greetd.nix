@@ -8,7 +8,7 @@
   homeSharePaths = lib.mapAttrsToList (_: v: "${v.home.path}/share") homeCfgs;
   vars = ''XDG_DATA_DIRS="$XDG_DATA_DIRS:${lib.concatStringsSep ":" homeSharePaths}" GTK_USE_PORTAL=0'';
 
-  gabrielCfg = homeCfgs.gabriel;
+  eelcoCfg = homeCfgs.eelco;
 
   sway-kiosk = command: "${lib.getExe pkgs.sway} --unsupported-gpu --config ${pkgs.writeText "kiosk.config" ''
     output * bg #000000 solid_color
@@ -27,14 +27,14 @@ in {
 
   programs.regreet = {
     enable = true;
-    iconTheme = gabrielCfg.gtk.iconTheme;
-    theme = gabrielCfg.gtk.theme;
-    font = gabrielCfg.fontProfiles.regular;
+    iconTheme = eelcoCfg.gtk.iconTheme;
+    theme = eelcoCfg.gtk.theme;
+    font = eelcoCfg.fontProfiles.regular;
     cursorTheme = {
-      inherit (gabrielCfg.gtk.cursorTheme) name package;
+      inherit (eelcoCfg.gtk.cursorTheme) name package;
     };
     settings.background = {
-      path = gabrielCfg.wallpaper;
+      path = eelcoCfg.wallpaper;
       fit = "Cover";
     };
   };
