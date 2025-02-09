@@ -117,48 +117,54 @@
     formatter = forEachSystem (pkgs: pkgs.alejandra);
 
     nixosConfigurations = {
-      # Main desktop
-      atlas = lib.nixosSystem {
-        modules = [./hosts/atlas];
+      tongfang = lib.nixosSystem {
+        modules = [./hosts/tongfang];
         specialArgs = {
           inherit inputs outputs;
         };
       };
+      # # Main desktop
+      # atlas = lib.nixosSystem {
+      #   modules = [./hosts/atlas];
+      #   specialArgs = {
+      #     inherit inputs outputs;
+      #   };
+      # };
       # Personal laptop
-      pleione = lib.nixosSystem {
-        modules = [./hosts/pleione];
-        specialArgs = {
-          inherit inputs outputs;
-        };
-      };
-      # Core server (Vultr)
-      alcyone = lib.nixosSystem {
-        modules = [./hosts/alcyone];
-        specialArgs = {
-          inherit inputs outputs;
-        };
-      };
-      # Build and game server (Oracle)
-      celaeno = lib.nixosSystem {
-        modules = [./hosts/celaeno];
-        specialArgs = {
-          inherit inputs outputs;
-        };
-      };
-      # Build and game server (Magalu Cloud)
-      taygeta = lib.nixosSystem {
-        modules = [./hosts/taygeta];
-        specialArgs = {
-          inherit inputs outputs;
-        };
-      };
-      # Media server (RPi)
-      merope = lib.nixosSystem {
-        modules = [./hosts/merope];
-        specialArgs = {
-          inherit inputs outputs;
-        };
-      };
+      #pleione = lib.nixosSystem {
+      #  modules = [./hosts/pleione];
+      #  specialArgs = {
+      #    inherit inputs outputs;
+      #  };
+      #};
+    #   # Core server (Vultr)
+    #   alcyone = lib.nixosSystem {
+    #     modules = [./hosts/alcyone];
+    #     specialArgs = {
+    #       inherit inputs outputs;
+    #     };
+    #   };
+    #   # Build and game server (Oracle)
+    #   celaeno = lib.nixosSystem {
+    #     modules = [./hosts/celaeno];
+    #     specialArgs = {
+    #       inherit inputs outputs;
+    #     };
+    #   };
+    #   # Build and game server (Magalu Cloud)
+    #   taygeta = lib.nixosSystem {
+    #     modules = [./hosts/taygeta];
+    #     specialArgs = {
+    #       inherit inputs outputs;
+    #     };
+    #   };
+    #   # Media server (RPi)
+    #   merope = lib.nixosSystem {
+    #     modules = [./hosts/merope];
+    #     specialArgs = {
+    #       inherit inputs outputs;
+    #     };
+    #   };
     };
 
     homeConfigurations = {
@@ -181,8 +187,8 @@
         };
       };
       # Personal laptop
-      "gabriel@pleione" = lib.homeManagerConfiguration {
-        modules = [./home/gabriel/pleione.nix ./home/gabriel/nixpkgs.nix];
+      "eelco@pleione" = lib.homeManagerConfiguration {
+        modules = [./home/eelco/tongfang.nix ./home/eelco/nixpkgs.nix];
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = {
           inherit inputs outputs;
